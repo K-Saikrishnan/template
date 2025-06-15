@@ -1,2 +1,2 @@
 default:
-  just --list
+  @just --list
