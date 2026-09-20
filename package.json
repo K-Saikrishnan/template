@@ -1,0 +1,30 @@
+{
+  "name": "PROJECT_NAME",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "K-Saikrishnan <53394202+K-Saikrishnan@users.noreply.github.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "oxfmt --no-error-on-unmatched-pattern",
+    "fmt:check": "oxfmt --no-error-on-unmatched-pattern --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix --fix-suggestions"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "=21.2.2",
+    "@commitlint/config-conventional": "=21.2.2",
+    "oxfmt": "=0.67.0",
+    "oxlint": "=1.82.0",
+    "oxlint-tsgolint": "=7.0.2001"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.5.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.5.1"
+}

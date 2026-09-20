@@ -1,0 +1,90 @@
+[project]
+name = "PROJECT_NAME"
+version = "0.0.0"
+readme = "README.md"
+authors = [
+  { name = "K-Saikrishnan", email = "53394202+K-Saikrishnan@users.noreply.github.com" },
+]
+requires-python = "==3.14.7"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "prek==0.5.3",
+]
+
+[tool.uv]
+add-bounds = "exact"
+exclude-newer = "P7D"
+
+
+[tool.ruff]
+line-length = 120
+indent-width = 2
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  # Recommended to disable
+  "COM812", # missing-trailing-comma
+  "COM819", # prohibited-trailing-comma
+  "D206",   # docstring-tab-indentation
+  "D207",   # under-indentation
+  "D208",   # over-indentation
+  "D300",   # triple-single-quotes
+  "E111",   # indentation-with-invalid-multiple
+  "E114",   # indentation-with-invalid-multiple-comment
+  "E117",   # over-indented
+  "Q",      # flake8-quotes
+  "W191",   # tab-indentation
+
+  "D100", # undocumented-public-module
+  "D101", # undocumented-public-class
+  "D102", # undocumented-public-method
+  "D103", # undocumented-public-function
+  "D104", # undocumented-public-package
+  "D105", # undocumented-magic-method
+  "D106", # undocumented-public-nested-class
+  "D107", # undocumented-public-init
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/*" = [
+  "D100", # undocumented-public-module
+  "D101", # undocumented-public-class
+  "D102", # undocumented-public-method
+  "D103", # undocumented-public-function
+  "D104", # undocumented-public-package
+  "D105", # undocumented-magic-method
+  "D106", # undocumented-public-nested-class
+  "D107", # undocumented-public-init
+  "S101", # assert
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+
+[tool.pytest.ini_options]
+addopts = [
+  "--cov=python_projects",
+  "--cov-report=html",
+  "--cov-report=xml",
+  "--cov-report=term-missing",
+  "--cov-fail-under=0",
+]
+
+pythonpath = "."
+xfail_strict = true
+
+[tool.coverage.run]
+branch = true
+omit = ["*/tests/*", "*/*_test.py"]
+parallel = true
+
+[tool.coverage.report]
+show_missing = true
