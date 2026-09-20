@@ -1,0 +1,5 @@
+dedupePeers: true
+minimumReleaseAge: 10080
+provenance: true
+savePrefix: =
+strictPeerDependencies: true

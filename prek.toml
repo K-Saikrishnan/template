@@ -1,0 +1,49 @@
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "trailing-whitespace" },
+  { id = "check-added-large-files" },
+  { id = "check-case-conflict" },
+  { id = "check-executables-have-shebangs" },
+  { id = "check-illegal-windows-names" },
+  { id = "check-json" },
+  { id = "check-json5" },
+  { id = "check-merge-conflict", args = [
+    "--assume-in-merge",
+  ] },
+  { id = "check-shebang-scripts-are-executable" },
+  { id = "check-symlinks" },
+  { id = "check-toml" },
+  { id = "check-vcs-permalinks" },
+  { id = "check-xml" },
+  { id = "check-yaml", args = [
+    "--allow-multiple-documents",
+  ] },
+  { id = "destroyed-symlinks" },
+  { id = "detect-private-key" },
+  { id = "end-of-file-fixer" },
+  { id = "fix-byte-order-marker" },
+  { id = "forbid-new-submodules" },
+  { id = "mixed-line-ending" },
+  { id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "https://github.com/crate-ci/typos"
+rev = "v1.50.2"
+hooks = [{ id = "typos" }]
+
+[[repos]]
+repo = "https://github.com/gitleaks/gitleaks"
+rev = "v8.30.1"
+hooks = [{ id = "gitleaks" }]
+
+[[repos]]
+repo = "https://github.com/oxc-project/mirrors-oxlint"
+rev = "v1.82.0"
+hooks = [{ id = "oxlint" }]
+
+[[repos]]
+repo = "https://github.com/oxc-project/mirrors-oxfmt"
+rev = "v0.67.0"
+hooks = [{ id = "oxfmt" }]
