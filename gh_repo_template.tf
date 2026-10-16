@@ -2,7 +2,7 @@ terraform {
   required_providers {
     github = {
       source  = "opentofu/github"
-      version = "6.6.0"
+      version = "6.13.0"
     }
   }
 }
@@ -16,9 +16,9 @@ locals {
   repo_visibility    = "public"
   template_repo_name = "template"
 
-  repo_name   = "python-projects"
+  repo_name   = "toolbox"
   repo_desc   = ""
-  repo_topics = ["python", "uv"]
+  repo_topics = []
 }
 
 resource "github_repository" "repo" {
@@ -61,6 +61,7 @@ resource "github_actions_secret" "docker_hub_user" {
   for_each = {
     DOCKER_HUB_USER = var.docker_hub_user
     DOCKER_HUB_PAT  = var.docker_hub_pat
+    SONAR_TOKEN     = var.sonar_token
   }
 
   repository      = local.repo_name

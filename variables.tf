@@ -15,3 +15,9 @@ variable "docker_hub_pat" {
   type        = string
   sensitive   = true
 }
+
+variable "sonar_token" {
+  description = "Sonar Token"
+  type        = string
+  sensitive   = true
+}
